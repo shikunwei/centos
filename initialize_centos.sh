@@ -7,11 +7,9 @@ set -e
 
 # 修改源
 #	1. 把原来的源文件备份
-mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+# mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 #	2. 从阿里云下载源文件
 # wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
-#   或者使用本地nexus中的软件源
-cp ./files/nexus.repo /etc/yum.repos.d/nexus.repo
 #	3. 清除缓冲
 sudo yum clean all
 #	4. 生成新缓冲
