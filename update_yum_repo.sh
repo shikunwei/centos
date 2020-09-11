@@ -12,41 +12,41 @@ mv /etc/yum.repos.d/*.repo /etc/yum.repos.d/backup
 #   使用本地nexus中的软件源
 echo '[base]
 name=CentOS-$releasever - Base
-baseurl=http://192.168.1.202:8081/repository/centos/$releasever/os/$basearch/
+baseurl=http://center.server:8081/repository/centos/$releasever/os/$basearch/
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
 #released updates 
 [updates]
 name=CentOS-$releasever - Updates
-baseurl=http://192.168.1.202:8081/repository/centos/$releasever/updates/$basearch/
+baseurl=http://center.server:8081/repository/centos/$releasever/updates/$basearch/
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
 #additional packages that may be useful
 [extras]
 name=CentOS-$releasever - Extras
-baseurl=http://192.168.1.202:8081/repository/centos/$releasever/extras/$basearch/
+baseurl=http://center.server:8081/repository/centos/$releasever/extras/$basearch/
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
 #additional packages that extend functionality of existing packages
 [centosplus]
 name=CentOS-$releasever - Plus
-baseurl=http://192.168.1.202:8081/repository/centos/$releasever/centosplus/$basearch/
+baseurl=http://center.server:8081/repository/centos/$releasever/centosplus/$basearch/
 gpgcheck=1
 enabled=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
 [nexus-epel]
 name = EPEL YUM repo
-baseurl = http://192.168.1.202:8081/repository/centos/$releasever/$basearch
+baseurl = http://center.server:8081/repository/centos/$releasever/$basearch
 failovermethod = priority
 gpgcheck = 0
 
 [nexus-epel-debuginfo]
 name = Extra Packages for Enterprise Linux $releasever - $basearch - Debug
-baseurl = http://192.168.1.202:8081/repository/centos/$releasever/$basearch/debug
+baseurl = http://center.server:8081/repository/centos/$releasever/$basearch/debug
 failovermethod = priority
 enabled = 0
 gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
@@ -54,7 +54,7 @@ gpgcheck = 0
 
 [nexus-epel-source]
 name = Extra Packages for Enterprise Linux $releasever - $basearch - Source
-baseurl = http://192.168.1.202:8081/repository/centos/$releasever/SRPMS
+baseurl = http://center.server:8081/repository/centos/$releasever/SRPMS
 failovermethod = priority
 enabled = 0
 gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
@@ -67,7 +67,7 @@ gpgcheck = 0
 # PGDG Red Hat Enterprise Linux / CentOS stable common repository for all PostgreSQL versions
 [pgdg-common]
 name=PostgreSQL common RPMs for RHEL/CentOS $releasever - $basearch
-baseurl=http://192.168.1.202:8081/repository/centos/common/redhat/rhel-$releasever-$basearch
+baseurl=http://center.server:8081/repository/centos/common/redhat/rhel-$releasever-$basearch
 enabled=1
 gpgcheck=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-PGDG
@@ -75,7 +75,7 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-PGDG
 # PGDG Red Hat Enterprise Linux / CentOS stable repositories:
 [pgdg10]
 name=PostgreSQL 10 for RHEL/CentOS $releasever - $basearch
-baseurl=http://192.168.1.202:8081/repository/centos/10/redhat/rhel-$releasever-$basearch
+baseurl=http://center.server:8081/repository/centos/10/redhat/rhel-$releasever-$basearch
 enabled=1
 gpgcheck=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-PGDG
