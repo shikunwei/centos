@@ -26,9 +26,9 @@ sudo service docker start && systemctl enable docker
 # config daemon.json
 echo '{
   "insecure-registries": [
-    "noah:8082",
-    "noah:8083",
-    "noah:8084"
+    "center.server:8082",
+    "center.server:8083",
+    "center.server:8084"
   ]
 }' > /etc/docker/daemon.json
 sudo service docker restart
